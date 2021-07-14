@@ -13,7 +13,7 @@ RSpec.describe Card do
     # end
 
     #Let uses lazyloading --> advantage in memory consumption vs Before
-
+    #Let! == Before --> it is not lazyloaded, it runs before each example no matter what
     let(:card) { Card.new('Ace', 'Spades') }
 
     it 'has a rank and that rank can change' do
@@ -24,5 +24,11 @@ RSpec.describe Card do
 
     it 'has a suit' do
         expect(card.suit).to eq('Spades')
+    end
+
+    it 'has a custom error message' do
+        card.suit = 'Nonsense'
+        comparison = 'Spades'
+        expect(card.suit).to eq(comparison), "Hey, I expected #{comparison} but I got #{card.suit} instead"
     end
 end
