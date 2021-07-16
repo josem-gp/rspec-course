@@ -9,7 +9,7 @@ RSpec.describe 'raise_error matcher' do
     class CustomError < StandardError; end #to customize the errors message
 
     it 'can check for any error' do
-        expect { some_method }.to raise_error #since this one is too general, RSpec will warn us saying it is too broad and we risk catching errors we didnt mean to
+        expect { some_method }.to raise_error #since this one is too general, RSpec will warn us saying it is too vague and we risk catching errors we didnt mean to
     end
 
     it 'can check for a specific error' do
