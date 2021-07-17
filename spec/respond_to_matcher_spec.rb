@@ -1,3 +1,5 @@
+#verify that an object can respond to a given method
+
 class HotChocolate
     def drink
         'Delicious'
@@ -10,5 +12,10 @@ class HotChocolate
     def purchase(number)
         "Awesome, I just purchased #{number} more hot chocolate beverages!"
     end
+end
 
+class Coffee
+    def drink; end
+    def discard; end
+    def purchase(number); end
 end
