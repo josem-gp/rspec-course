@@ -18,3 +18,5 @@ RSpec.describe 'matching arguments' do
         expect(three_element_array.first(1000)).to eq([1,2,3])
     end
 end
+
+# for more complex stuff: https://relishapp.com/rspec/rspec-mocks/v/3-8/docs/setting-constraints/matching-arguments
