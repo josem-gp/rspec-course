@@ -23,12 +23,6 @@ RSpec.describe [:usa, :canada, :mexico] do
     end
 end
 
-RSpec.describe 'firetruck' do
-    it 'checks start and end of the word' do
-        expect(subject).to start_with('fire').and end_with('truck')
-    end
-end
-
 RSpec.describe 20 do
     it 'checks multiple matchers' do
         expect(subject).to be_even.and respond_to(:times)
@@ -37,6 +31,6 @@ end
 
 RSpec.describe [4,8,15,16,23,42] do
     it 'checks multiple matchers' do
-        expect(subject).to include(42).and start_with([4,8,15])
+        expect(subject).to include(42).and start_with(4,8,15)
     end
 end
