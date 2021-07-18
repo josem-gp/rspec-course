@@ -17,7 +17,7 @@ RSpec.describe 'caterpillar' do
     it { is_expected.to start_with('cat').and end_with('pillar') }
 end
 
-RSpec.describe [:use, :canada, :mexico] do
+RSpec.describe [:usa, :canada, :mexico] do
     it 'can check for multiple possibilities' do
         expect(subject.sample).to eq(:usa).or eq(:canada).or eq(:mexico)
     end
@@ -32,5 +32,11 @@ end
 RSpec.describe 20 do
     it 'checks multiple matchers' do
         expect(subject).to be_even.and respond_to(:times)
+    end
+end
+
+RSpec.describe [4,8,15,16,23,42] do
+    it 'checks multiple matchers' do
+        expect(subject).to include(42).and start_with([4,8,15])
     end
 end
