@@ -22,3 +22,9 @@ RSpec.describe [:use, :canada, :mexico] do
         expect(subject.sample).to eq(:usa).or eq(:canada).or eq(:mexico)
     end
 end
+
+RSpec.describe 'firetruck' do
+    it 'checks start and end of the word' do
+        expect(subject).to start_with('fire').and end_with('truck')
+    end
+end
