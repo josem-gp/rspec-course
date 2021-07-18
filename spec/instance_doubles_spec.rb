@@ -21,7 +21,7 @@ RSpec.describe Person do
             # person = instance_double(Person, a: 'Hello', b: 20)
             # person = instance_double(Person, a: 'Hello')
         
-        person = instance_double(Person)
+        person = instance_double(Person) #we pass the class from which we will create the instance double
         allow(person).to receive(:a).with(3).and_return("hey")
         expect(person.a(3)).to eq("hey")
         
