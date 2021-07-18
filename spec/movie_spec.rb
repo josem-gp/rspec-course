@@ -35,6 +35,7 @@ class Movie
             actor.act
             actor.fall_off_ladder
             actor.light_on_fire
+            actor.act
         end
     end
 end
@@ -49,10 +50,12 @@ RSpec.describe Movie do
 
     describe '#start_shooting method' do
         it 'expects an actor to do 3 actions' do
-            expect(stuntman).to receive(:ready?)
-            expect(stuntman).to receive(:act)
-            expect(stuntman).to receive(:fall_off_ladder)
-            expect(stuntman).to receive(:light_on_fire)
+            expect(stuntman).to receive(:ready?).exactly(1).times #we can check how many times we expect the method to run in different ways
+            # expect(stuntman).to receive(:act).twice
+            # expect(stuntman).to receive(:act).at_least(2).times
+            expect(stuntman).to receive(:act).exactly(2).times
+            expect(stuntman).to receive(:fall_off_ladder).at_most(1).times
+            expect(stuntman).to receive(:light_on_fire).once
             subject.start_shooting #we write the expectations first, and then we call the method on the subject. then it will run the method and check all those expectations we wrote before.
         end
     end
