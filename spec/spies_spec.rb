@@ -11,7 +11,7 @@ RSpec.describe 'spies' do
         expect(animal).not_to have_received(:eat_human)
     end
 
-    it 'resets between examples' do
+    it 'resets between examples' do #just like a normal double it resets between examples
         expect(animal).not_to have_received(:eat_food)
     end
 
